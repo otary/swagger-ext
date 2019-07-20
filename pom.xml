@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.chenzw.swagger</groupId>
-    <artifactId>swagger-exts</artifactId>
+    <artifactId>swagger-ext</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
@@ -19,8 +19,13 @@
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
 
+        <slf4j.version>1.7.26</slf4j.version>
+        <servlet.version>3.1.0</servlet.version>
+        <junit.version>4.12</junit.version>
         <log4j.version>2.12.0</log4j.version>
         <logback.version>1.2.3</logback.version>
+
+        <swagger2.version>2.9.2</swagger2.version>
     </properties>
 
 
@@ -119,6 +124,18 @@
             <scope>test</scope>
         </dependency>
         <!-- /spring -->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger2.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
