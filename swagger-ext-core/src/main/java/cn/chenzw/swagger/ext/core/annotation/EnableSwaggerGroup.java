@@ -1,12 +1,18 @@
 package cn.chenzw.swagger.ext.core.annotation;
 
-import org.springframework.cache.annotation.CachingConfigurationSelector;
+import cn.chenzw.swagger.ext.core.config.SwaggerGroupConfiguration;
 import org.springframework.context.annotation.Import;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
+/**
+ * 开启Swagger分组功能
+ */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
+@Import({SwaggerGroupConfiguration.class})
 public @interface EnableSwaggerGroup {
 }
