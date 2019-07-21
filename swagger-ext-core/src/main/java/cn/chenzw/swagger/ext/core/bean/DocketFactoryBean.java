@@ -44,6 +44,8 @@ public class DocketFactoryBean implements FactoryBean<Docket> {
                 // 服务条款网址
                 .termsOfServiceUrl(swaggerProperties.getTermsOfServiceUrl())
                 .version(swaggerProperties.getVersion())
+                .license(swaggerProperties.getLicense())
+                .licenseUrl(swaggerProperties.getLicenseUrl())
                 .contact(new Contact(swaggerProperties.getContactName(), swaggerProperties.getContactUrl(), swaggerProperties.getContactEmail()))
                 .build();
 

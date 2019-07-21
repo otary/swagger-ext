@@ -39,6 +39,12 @@ public class SwaggerProperties {
     @Value("${" + PROP_PREFIX + "contact.email}")
     private String contactEmail;
 
+    @Value("${" + PROP_PREFIX + "license}")
+    private String license;
+
+    @Value("${" + PROP_PREFIX + "license-url}")
+    private String licenseUrl;
+
     public String getTitle() {
         return title;
     }
@@ -103,6 +109,22 @@ public class SwaggerProperties {
         this.contactEmail = contactEmail;
     }
 
+    public String getLicense() {
+        return license;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public String getLicenseUrl() {
+        return licenseUrl;
+    }
+
+    public void setLicenseUrl(String licenseUrl) {
+        this.licenseUrl = licenseUrl;
+    }
+
     @Override
     public String toString() {
         return "SwaggerProperties{" +
@@ -114,6 +136,8 @@ public class SwaggerProperties {
                 ", contactName='" + contactName + '\'' +
                 ", contactUrl='" + contactUrl + '\'' +
                 ", contactEmail='" + contactEmail + '\'' +
+                ", license='" + license + '\'' +
+                ", licenseUrl='" + licenseUrl + '\'' +
                 '}';
     }
 }
