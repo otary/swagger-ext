@@ -4,8 +4,9 @@
     <groupId>cn.chenzw.swagger</groupId>
     <artifactId>swagger-ext</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>${swagger-ext.version}</version>
     <url>http://maven.apache.org</url>
+
     <modules>
         <module>swagger-ext-samples</module>
     </modules>
@@ -20,15 +21,14 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 
         <commons-lang3.version>3.9</commons-lang3.version>
-        <commons-io.version>2.6</commons-io.version>
 
         <slf4j.version>1.7.26</slf4j.version>
         <servlet.version>3.1.0</servlet.version>
         <junit.version>4.12</junit.version>
-        <log4j.version>2.12.0</log4j.version>
         <logback.version>1.2.3</logback.version>
-
         <swagger2.version>2.9.2</swagger2.version>
+
+        <swagger-ext.version>1.0.0</swagger-ext.version>
     </properties>
 
 
@@ -66,21 +66,9 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.12</version>
+            <scope>provided</scope>
         </dependency>
         <!-- /apache commons -->
-
 
         <!-- logging -->
         <dependency>
@@ -89,31 +77,13 @@
             <version>${slf4j.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <!-- /logging -->
 
         <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -132,22 +102,14 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger2.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${swagger2.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>

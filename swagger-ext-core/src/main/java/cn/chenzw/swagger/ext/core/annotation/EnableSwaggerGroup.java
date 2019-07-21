@@ -10,6 +10,8 @@ import java.lang.annotation.Target;
 
 /**
  * 开启Swagger分组功能
+ *
+ * @author chenzw
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
