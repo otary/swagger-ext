@@ -13,6 +13,6 @@
 
     <groupId>cn.chenzw.swagger</groupId>
     <artifactId>swagger-ext-core</artifactId>
-    <version>${swagger-ext.version}</version>
+    <version>1.0.0</version>
 
 </project>

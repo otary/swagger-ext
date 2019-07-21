@@ -4,11 +4,11 @@
     <groupId>cn.chenzw.swagger</groupId>
     <artifactId>swagger-ext</artifactId>
     <packaging>pom</packaging>
-    <version>${swagger-ext.version}</version>
-    <url>http://maven.apache.org</url>
+    <version>1.0.0</version>
 
+    <url>http://maven.apache.org</url>
     <modules>
-        <module>swagger-ext-samples</module>
+        <module>swagger-ext-core</module>
     </modules>
 
     <properties>
@@ -28,7 +28,6 @@
         <logback.version>1.2.3</logback.version>
         <swagger2.version>2.9.2</swagger2.version>
 
-        <swagger-ext.version>1.0.0</swagger-ext.version>
     </properties>
 
 
@@ -112,4 +111,13 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+
+    <!--<repositories>
+        <repository>
+            <id>sonatype-oss-snapshots</id>
+            <name>Sonatype OSS Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>-->
 </project>
