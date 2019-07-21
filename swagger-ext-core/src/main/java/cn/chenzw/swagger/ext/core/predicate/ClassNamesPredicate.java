@@ -1,4 +1,4 @@
-package cn.chenzw.swagger.ext.core;
+package cn.chenzw.swagger.ext.core.predicate;
 
 
 import com.google.common.base.Function;
