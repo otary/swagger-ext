@@ -66,10 +66,8 @@ public class SwaggerGroupProcessor implements ApplicationContextAware {
                     .getRawBeanDefinition();
             registry.registerBeanDefinition(BeanDefinitionReaderUtils.generateBeanName(beanDefinition, registry, false), beanDefinition);
         }
-        System.out.println("耗时1：" + (System.currentTimeMillis() - t1));
-
         applicationContext.getBeansOfType(Docket.class);
-        System.out.println("耗时2:" + (System.currentTimeMillis() - t1));
+
         long t2 = System.currentTimeMillis();
         logger.debug("Swagger finish group processor, cost {} ms", t2 - t1);
     }
