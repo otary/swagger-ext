@@ -9,10 +9,10 @@ import java.lang.annotation.*;
 public @interface ApiGroup {
 
     /**
-     * 分组名
+     * 分组名称
      *
      * @return
      */
-    String name();
+    String name() default "";
 
 }

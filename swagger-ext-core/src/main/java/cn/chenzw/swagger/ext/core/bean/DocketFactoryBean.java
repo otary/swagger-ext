@@ -3,7 +3,10 @@ package cn.chenzw.swagger.ext.core.bean;
 import cn.chenzw.swagger.ext.core.config.SwaggerProperties;
 import cn.chenzw.swagger.ext.core.predicate.ClassNamesPredicate;
 import org.springframework.beans.factory.FactoryBean;
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -27,12 +30,24 @@ public class DocketFactoryBean implements FactoryBean<Docket> {
 
     @Override
     public Docket getObject() throws Exception {
-
-        return new Docket(DocumentationType.SWAGGER_2).groupName(groupName)
+        return new Docket(DocumentationType.SWAGGER_2).groupName(groupName).apiInfo(apiInfo())
                 .select()
                 .apis(new ClassNamesPredicate(clazzNames))
                 .paths(PathSelectors.any())
                 .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(swaggerProperties.getTitle())
+                .description(swaggerProperties.getDescription())
+                // 服务条款网址
+                .termsOfServiceUrl(swaggerProperties.getTermsOfServiceUrl())
+                .version(swaggerProperties.getVersion())
+                .contact(new Contact(swaggerProperties.getContactName(), swaggerProperties.getContactUrl(), swaggerProperties.getContactEmail()))
+                .build();
+
+
     }
 
     @Override
