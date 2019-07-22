@@ -1,4 +1,4 @@
-package cn.chenzw.swagger.ext.samples.config;
+package cn.chenzw.swagger.ext.spring.config;
 
 import cn.chenzw.swagger.ext.core.annotation.EnableSwaggerGroup;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.chenzw.swagger.ext.samples"))
+                .apis(RequestHandlerSelectors.basePackage("cn.chenzw.swagger.ext.springboot.samples"))
                 .paths(PathSelectors.any())
                 .build();
 

@@ -71,3 +71,7 @@ swagger.contact.url=https://github.com/otary/swagger-ext
 swagger.contact.email=656469722@qq.com
 ```
 
+- 访问
+
+http://localhost:8080/swagger-ui.html#/
+

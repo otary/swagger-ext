@@ -30,7 +30,6 @@
 
     </properties>
 
-
     <!-- 依赖配置 -->
     <dependencyManagement>
         <dependencies>
