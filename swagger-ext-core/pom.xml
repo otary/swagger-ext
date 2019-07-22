@@ -8,11 +8,13 @@
         <groupId>cn.chenzw.swagger</groupId>
         <artifactId>swagger-ext</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>cn.chenzw.swagger</groupId>
     <artifactId>swagger-ext-core</artifactId>
     <version>1.0.0</version>
+
+
 
 </project>

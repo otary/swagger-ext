@@ -8,10 +8,12 @@ import org.springframework.context.annotation.PropertySource;
  * @author chenzw
  */
 @Configuration
-@PropertySource(SwaggerProperties.DEFAULT_PROPERTY_FILE_LOCATION)
+@PropertySource({SwaggerProperties.DEFAULT_SWAGGER_PROPERTY_FILE_LOCATION,
+        SwaggerProperties.DEFAULT_PROPERTY_FILE_LOCATION})
 public class SwaggerProperties {
 
-    public static final String DEFAULT_PROPERTY_FILE_LOCATION = "classpath:swagger.properties";
+    public static final String DEFAULT_SWAGGER_PROPERTY_FILE_LOCATION = "classpath:swagger.properties";
+    public static final String DEFAULT_PROPERTY_FILE_LOCATION = "classpath:application.properties";
     public static final String PROP_PREFIX = "swagger.";
 
     @Value("${" + PROP_PREFIX + "scan-basepackage}")
@@ -22,7 +24,6 @@ public class SwaggerProperties {
 
     @Value("${" + PROP_PREFIX + "description}")
     private String description;
-
 
     @Value("${" + PROP_PREFIX + "term-of-service-url}")
     private String termsOfServiceUrl;
@@ -127,17 +128,10 @@ public class SwaggerProperties {
 
     @Override
     public String toString() {
-        return "SwaggerProperties{" +
-                "basePackage='" + basePackage + '\'' +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", termsOfServiceUrl='" + termsOfServiceUrl + '\'' +
-                ", version='" + version + '\'' +
-                ", contactName='" + contactName + '\'' +
-                ", contactUrl='" + contactUrl + '\'' +
-                ", contactEmail='" + contactEmail + '\'' +
-                ", license='" + license + '\'' +
-                ", licenseUrl='" + licenseUrl + '\'' +
-                '}';
+        return "SwaggerProperties{" + "basePackage='" + basePackage + '\'' + ", title='" + title + '\''
+                + ", description='" + description + '\'' + ", termsOfServiceUrl='" + termsOfServiceUrl + '\''
+                + ", version='" + version + '\'' + ", contactName='" + contactName + '\'' + ", contactUrl='"
+                + contactUrl + '\'' + ", contactEmail='" + contactEmail + '\'' + ", license='" + license + '\''
+                + ", licenseUrl='" + licenseUrl + '\'' + '}';
     }
 }

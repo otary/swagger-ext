@@ -43,7 +43,8 @@ public class SwaggerGroupProcessor implements ApplicationContextAware {
 
         Set<Class<?>> apiGroupClazzs = null;
         try {
-            apiGroupClazzs = ResourceScannerUtils.scanClassFromAnnotation(swaggerProperties.getBasePackage(), new Class[]{ApiGroup.class});
+            apiGroupClazzs = ResourceScannerUtils
+                    .scanClassFromAnnotation(swaggerProperties.getBasePackage(), new Class[]{ApiGroup.class});
         } catch (IOException | ClassNotFoundException e) {
             logger.error("Scan for @ApiGroup with error! ", e);
         }
@@ -57,16 +58,18 @@ public class SwaggerGroupProcessor implements ApplicationContextAware {
                 apiGroupMap.put(apiGroup.name(), Sets.newHashSet(apiGroupClazz.getName()));
             }
         }
-        BeanDefinitionRegistry registry = (BeanDefinitionRegistry) ((ConfigurableApplicationContext) applicationContext).getBeanFactory();
+        BeanDefinitionRegistry registry = (BeanDefinitionRegistry) ((ConfigurableApplicationContext) applicationContext)
+                .getBeanFactory();
         for (Map.Entry<String, Set<String>> apiGroupEntry : apiGroupMap.entrySet()) {
             BeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(DocketFactoryBean.class)
-                    .addConstructorArgValue(apiGroupEntry.getKey())
-                    .addConstructorArgValue(apiGroupEntry.getValue())
-                    .addConstructorArgValue(swaggerProperties)
-                    .getRawBeanDefinition();
-            registry.registerBeanDefinition(BeanDefinitionReaderUtils.generateBeanName(beanDefinition, registry, false), beanDefinition);
+                    .addConstructorArgValue(apiGroupEntry.getKey()).addConstructorArgValue(apiGroupEntry.getValue())
+                    .addConstructorArgValue(swaggerProperties).getRawBeanDefinition();
+            registry.registerBeanDefinition(BeanDefinitionReaderUtils.generateBeanName(beanDefinition, registry, false),
+                    beanDefinition);
         }
-        applicationContext.getBeansOfType(Docket.class);
+
+        Map<String, Docket> docketMaps = applicationContext.getBeansOfType(Docket.class);
+        logger.debug("Swagger init dockets: {}", docketMaps);
 
         long t2 = System.currentTimeMillis();
         logger.debug("Swagger finish group processor, cost {} ms", t2 - t1);

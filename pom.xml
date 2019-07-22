@@ -120,4 +120,12 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>-->
+
+
+    <distributionManagement>
+        <repository>
+            <id>itm-release</id>
+            <url>http://192.168.17.223:8085/repository/maven-3rd/</url>
+        </repository>
+    </distributionManagement>
 </project>

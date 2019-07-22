@@ -13,6 +13,6 @@ public @interface ApiGroup {
      *
      * @return
      */
-    String name() default "";
+    String name() ;
 
 }
