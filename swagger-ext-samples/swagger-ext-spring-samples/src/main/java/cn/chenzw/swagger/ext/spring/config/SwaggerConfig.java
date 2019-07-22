@@ -24,7 +24,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.chenzw.swagger.ext.spring.samples"))
+                .apis(RequestHandlerSelectors.basePackage("cn.chenzw.swagger.ext.spring"))
                 .paths(PathSelectors.any())
                 .build();
 
