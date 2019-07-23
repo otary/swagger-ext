@@ -149,13 +149,14 @@
         <url>git@github.com:otary/swagger-ext.git</url>
     </scm>
 
+    <!-- 发布配置 -->
     <distributionManagement>
         <repository>
-            <id>sonatype-oss-staging</id>
+            <id>sonatype-oss</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
-            <id>sonatype-oss-snapshots</id>
+            <id>sonatype-oss</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
 
@@ -165,16 +166,9 @@
         </repository>-->
     </distributionManagement>
 
-    <build>
-        <plugins>
-
-        </plugins>
-    </build>
-
-
     <profiles>
         <profile>
-            <id>release</id>
+            <id>oss-release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -183,7 +177,7 @@
                         <version>1.6.8</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>sonatype-oss-staging</serverId>
+                            <serverId>oss</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
@@ -246,8 +240,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
-
                 </plugins>
             </build>
         </profile>

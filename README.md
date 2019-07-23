@@ -75,3 +75,6 @@ swagger.contact.email=656469722@qq.com
 
 http://localhost:8080/swagger-ui.html#/
 
+- 发布
+
+mvn clean deploy -Dmaven.test.skip=true -P oss-release
