@@ -1,17 +1,17 @@
-package cn.chenzw.swagger.ext.spring.controllers;
+package cn.chenzw.swagger.ext.springboot.controllers;
 
 import io.swagger.annotations.ext.ApiGroup;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@ApiGroup(name = "homeGroup")
+@ApiGroup(name = "helloGroup")
 @RestController
-@RequestMapping("/home")
-public class HomeController {
+@RequestMapping("/hello")
+public class HelloController {
 
-    @GetMapping("/index")
-    public String index(){
-        return "index";
+    @GetMapping("/say")
+    public String say(String name) {
+        return "hello, " + name;
     }
 }

@@ -1,4 +1,4 @@
-package cn.chenzw.swagger.ext.spring.controllers;
+package cn.chenzw.swagger.ext.springboot.controllers;
 
 import io.swagger.annotations.ext.ApiGroup;
 import org.springframework.web.bind.annotation.GetMapping;
