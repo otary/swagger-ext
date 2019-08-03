@@ -1,17 +1,14 @@
 package io.swagger.annotations.ext;
+
 import java.lang.annotation.*;
+
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.ANNOTATION_TYPE)
 @Inherited
 @Documented
-public @interface ApiMapParam {
+public @interface ApiMapResponse {
 
-    /**
-     * key值
-     *
-     * @return
-     */
     String key();
 
     String example() default "";
