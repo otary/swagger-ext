@@ -14,6 +14,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 // @Import({SwaggerExtConfiguration.class})
+@EnableSwaggerGroup
 @ComponentScan(basePackageClasses = {SwaggerMapModelsProvider.class, SwaggerMapProcessor.class})
 public @interface EnableSwaggerExt {
 }

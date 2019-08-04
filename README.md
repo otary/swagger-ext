@@ -3,6 +3,19 @@
 Swagger扩展工具，支持API分组
 
 
+![](https://img.shields.io/badge/springboot-2.1.5.RELEASE-brightgreen)
+![](https://img.shields.io/badge/spring--framework-4.3.24.RELEASE-brightgreen)
+![](https://img.shields.io/badge/jdk-1.8-green)
+![](https://img.shields.io/badge/springfox--swagger2-2.9.2-brightgreen)
+![](https://img.shields.io/badge/javassist-3.25.0--GA-brightgreen)
+
+
+## Features
+
+- 支持API分组显示
+- 支持Map、JSONObject等参数、响应值
+
+
 ## Usage
 
 - Dependence
@@ -15,7 +28,7 @@ Swagger扩展工具，支持API分组
 </dependency>
 ```
 
-- 开启API分组功能
+### 开启API分组功能
 
 ```
 @Configuration
@@ -75,6 +88,56 @@ swagger.contact.email=656469722@qq.com
 
 http://localhost:8080/swagger-ui.html#/
 
-- 发布
 
-mvn clean deploy -Dmaven.test.skip=true -P oss-release
+### 开启支持Map、JSONObject参数、返回值
+
+
+```
+@Configuration
+@EnableSwagger2
+@EnableSwaggerExt
+public class SwaggerConfig {
+
+    /**
+     * 默认API分组
+     *
+     * @return
+     */
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("cn.chenzw.swagger.ext.springboot"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+}
+```
+
+- 使用@ApiMapParams、 @ApiMapResponses定义Map、JSONObject等参数、响应值
+
+```
+@RestController
+@RequestMapping("/home")
+public class HomeController {
+
+    @ApiMapResponses({
+            @ApiMapResponse(key = "resp1", description = "响应值1", allowableValues = "1,2,3"),
+            @ApiMapResponse(key = "resp2", description = "响应值2")
+    })
+    @ApiMapParams(name = "map2", value = {
+            @ApiMapParam(key = "test", description = "测试", allowableValues = "1,2,3"),
+            @ApiMapParam(key = "test2", description = "测试2")
+    })
+    @PostMapping("/map2")
+    public Map<String, Object> testMapWidthMethodAnnotation(@RequestBody Map<String, Object> map2) {
+        return map2;
+    }
+
+
+}
+```
+
+### 发布
+
+> mvn clean deploy -Dmaven.test.skip=true -P oss-release

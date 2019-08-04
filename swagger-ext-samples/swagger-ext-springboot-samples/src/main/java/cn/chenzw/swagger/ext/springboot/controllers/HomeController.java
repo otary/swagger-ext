@@ -17,7 +17,7 @@ public class HomeController {
     }
 
     @ApiMapResponses({
-            @ApiMapResponse(key = "resp1", description = "响应值1"),
+            @ApiMapResponse(key = "resp1", description = "响应值1", allowableValues = "1,2,3"),
             @ApiMapResponse(key = "resp2", description = "响应值2")
     })
     @PostMapping("/map")
@@ -28,14 +28,18 @@ public class HomeController {
         return map2;
     }
 
-
+    @ApiMapResponses({
+            @ApiMapResponse(key = "resp1", description = "响应值1", allowableValues = "1,2,3"),
+            @ApiMapResponse(key = "resp2", description = "响应值2")
+    })
     @ApiMapParams(name = "map2", value = {
-            @ApiMapParam(key = "test", description = "测试"),
+            @ApiMapParam(key = "test", description = "测试", allowableValues = "1,2,3"),
             @ApiMapParam(key = "test2", description = "测试2")
     })
     @PostMapping("/map2")
     public Map<String, Object> testMapWidthMethodAnnotation(@RequestBody Map<String, Object> map2) {
         return map2;
     }
+
 
 }
