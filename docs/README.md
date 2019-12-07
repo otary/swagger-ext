@@ -25,7 +25,7 @@ Swagger扩展工具，支持API分组
 
 - Dependence
 
-```
+``` xml
 <dependency>
      <groupId>cn.chenzw.swagger</groupId>
      <artifactId>swagger-ext-core</artifactId>
@@ -35,7 +35,10 @@ Swagger扩展工具，支持API分组
 
 ### 开启API分组功能
 
-```
+``` java
+import cn.chenzw.swagger.ext.core.annotation.EnableSwaggerExt;
+import cn.chenzw.swagger.ext.core.annotation.EnableSwaggerGroup;
+
 @Configuration
 @EnableSwagger2
 @EnableSwaggerGroup
@@ -46,7 +49,10 @@ public class SwaggerConfig {
 
 - 使用@ApiGroup注解分组
   - @ApiGroup的name值相同的为一组
-```
+  
+``` java
+import io.swagger.annotations.ext.ApiGroup;
+
 @ApiGroup(name = "helloGroup")
 @RestController
 @RequestMapping("/hello")
@@ -77,7 +83,7 @@ public class Hello2Controller {
 
 - 配置(可选)
 
-```
+``` properties
 # swagger.scan-basepackage必选,其它选项可选
 swagger.scan-basepackage=cn.chenzw.swagger.ext.samples
 swagger.title=测试项目API
@@ -97,7 +103,7 @@ http://localhost:8080/swagger-ui.html#/
 ### 开启支持Map、JSONObject参数、返回值
 
 
-```
+``` java
 @Configuration
 @EnableSwagger2
 @EnableSwaggerExt
@@ -122,6 +128,8 @@ public class SwaggerConfig {
 - 使用@ApiMapParams、 @ApiMapResponses定义Map、JSONObject等参数、响应值
 
 ```
+import io.swagger.annotations.ext.*;
+
 @RestController
 @RequestMapping("/home")
 public class HomeController {

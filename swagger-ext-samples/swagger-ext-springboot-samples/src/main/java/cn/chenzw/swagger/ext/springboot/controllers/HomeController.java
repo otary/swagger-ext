@@ -1,6 +1,5 @@
 package cn.chenzw.swagger.ext.springboot.controllers;
 
-import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ext.*;
 import org.springframework.web.bind.annotation.*;
 
