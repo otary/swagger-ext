@@ -117,8 +117,6 @@
         </dependency>
     </dependencies>
 
-
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -238,4 +236,24 @@
             </build>
         </profile>
     </profiles>
+
+    <build>
+        <plugins>
+            <!-- 质量分析 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <check/>
+                </configuration>
+            </plugin>
+            <!-- /质量分析 -->
+        </plugins>
+    </build>
+
 </project>
