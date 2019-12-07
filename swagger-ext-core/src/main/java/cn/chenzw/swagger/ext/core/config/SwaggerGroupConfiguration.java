@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Import;
 public class SwaggerGroupConfiguration {
 
     @Bean
-    SwaggerGroupProcessor swaggerGroupProcessor(SwaggerProperties swaggerProperties) {
+    public SwaggerGroupProcessor swaggerGroupProcessor(SwaggerProperties swaggerProperties) {
         return new SwaggerGroupProcessor(swaggerProperties);
     }
 
