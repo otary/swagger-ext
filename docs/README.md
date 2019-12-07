@@ -11,6 +11,10 @@ Swagger扩展工具，支持API分组
 [![Build Status](https://travis-ci.org/otary/swagger-ext.svg?branch=master)](https://travis-ci.org/otary/swagger-ext)
 
 
+## Docs
+
+[中文文档](https://otary.github.io/swagger-ext/)
+
 ## Features
 
 - [x] 支持API分组显示
