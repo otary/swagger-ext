@@ -6,7 +6,7 @@
 
     <groupId>cn.chenzw.swagger</groupId>
     <artifactId>swagger-ext-samples</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     <modules>
         <module>swagger-ext-spring-samples</module>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>cn.chenzw.swagger</groupId>
             <artifactId>swagger-ext-core</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
         <dependency>

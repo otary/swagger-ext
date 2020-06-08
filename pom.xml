@@ -2,13 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.chenzw.swagger</groupId>
-    <artifactId>swagger-ext</artifactId>
+    <artifactId>swagger-ext-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <url>http://maven.apache.org</url>
     <modules>
         <module>swagger-ext-core</module>
+        <module>swagger-ext-all</module>
     </modules>
 
     <properties>
@@ -169,7 +170,7 @@
                         <version>1.6.8</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>oss</serverId>
+                            <serverId>sonatype-oss</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>

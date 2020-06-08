@@ -8,12 +8,14 @@ import org.springframework.context.annotation.PropertySource;
  * @author chenzw
  */
 @Configuration
-@PropertySource({SwaggerProperties.DEFAULT_SWAGGER_PROPERTY_FILE_LOCATION,
-        SwaggerProperties.DEFAULT_PROPERTY_FILE_LOCATION})
+@PropertySource(value = {SwaggerProperties.DEFAULT_SWAGGER_PROPERTY_FILE_LOCATION,
+        SwaggerProperties.DEFAULT_PROPERTY_FILE_LOCATION,
+        SwaggerProperties.DEFAULT_YAML_FILE_LOCATION }, ignoreResourceNotFound = true)
 public class SwaggerProperties {
 
     public static final String DEFAULT_SWAGGER_PROPERTY_FILE_LOCATION = "classpath:swagger.properties";
     public static final String DEFAULT_PROPERTY_FILE_LOCATION = "classpath:application.properties";
+    public static final String DEFAULT_YAML_FILE_LOCATION = "classpath:application.yml";
     public static final String PROP_PREFIX = "swagger.";
 
     @Value("${" + PROP_PREFIX + "scan-basepackage}")

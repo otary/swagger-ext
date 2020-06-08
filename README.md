@@ -28,8 +28,8 @@ Swagger扩展工具，支持API分组
 ``` xml
 <dependency>
      <groupId>cn.chenzw.swagger</groupId>
-     <artifactId>swagger-ext-core</artifactId>
-     <version>1.0.0</version>
+     <artifactId>swagger-ext-all</artifactId>
+     <version>1.0.1</version>
 </dependency>
 ```
 
